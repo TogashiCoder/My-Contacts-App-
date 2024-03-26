@@ -1,0 +1,32 @@
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.frontend {
+    background-color: #FF5733; /* Orange */
+}
+
+.backend {
+    background-color: #3498DB; /* Blue */
+}
+
+.fullstack {
+    background-color: #2ECC71; /* Green */
+}
+
+.mobile {
+    background-color: #FFC300; /* Yellow */
+}
+
+.web {
+    background-color: #9B59B6; /* Purple */
+}
+
