@@ -1,32 +1,203 @@
-.circle {
-    width: 100px;
-    height: 100px;
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* font-family: "Madimi One", sans-serif; */
+}
+
+.big-pa{
+    width: 100%;
+    min-height: 110vh;
+    background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+
+}
+
+
+/* serach bar */
+form{
+    position: relative;
+    top: 50%;
+    left: 10%;
+    transform: translate(-40%,20%);
+    transition: all 1s;
+    width: 50px;
+    height: 50px;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 4px solid white;
+    padding: 5px;
+}
+
+input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;;
+    height: 42.5px;
+    line-height: 30px;
+    outline: 0;
+    border: 0;
+    display: none;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 0 20px;
+}
+
+
+
+
+.fa{
+    box-sizing: border-box;
+    padding: 10px;
+    width: 42.5px;
+    height: 42.5px;
+    position: absolute;
+    top: 0;
+    right: 0;
     border-radius: 50%;
-    display: inline-block;
-    margin: 10px;
+    color: black;
     text-align: center;
-    line-height: 100px;
-    font-weight: bold;
-    font-size: 16px;
+    font-size: 1.2em;
+    transition: all 1s;
 }
 
-.frontend {
-    background-color: #FF5733; /* Orange */
+form:hover{
+    width: 300px;
+    cursor: pointer;
 }
 
-.backend {
-    background-color: #3498DB; /* Blue */
+form:hover input{
+    display: block;
 }
 
-.fullstack {
-    background-color: #2ECC71; /* Green */
+form:hover .fa{
+    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+
+    color: white;
 }
 
-.mobile {
-    background-color: #FFC300; /* Yellow */
+
+/* add button */
+.add-symbol{
+    position: absolute;
+    left: 330px;
+    top: 15px;
+    font-size: 30px;
+    color:  #ef5cc6;
+
+
+
+}
+/* whatsapp */
+
+
+.whatsappSpaceArea{
+    margin-top: 20px;
+    margin-left: 10px;
+        
 }
 
-.web {
-    background-color: #9B59B6; /* Purple */
+.whatsappSpaceArea::-webkit-scrollbar {
+    /* Hide the scrollbar for WebKit browsers (Chrome, Safari, Opera) */
+    display: none;
 }
+
+.whatsappSpaceArea {
+    /* Remove the border property */
+    border: none;
+}
+
+
+
+.my-contact{
+    display: flex;
+    background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+    border-bottom: rgb(224, 224, 224) solid  1px;
+    padding: 10px;
+    
+}
+
+.person-img{
+    width: 55px;
+    margin-right: 8px;
+    transition: all 0.5s;
+}
+
+
+.text .full-name{
+    color: white;
+font-size: 18px;
+font-family: "Madimi One", sans-serif;
+width: 130px;
+overflow: hidden;
+text-wrap:nowrap;
+}
+
+.text .simple-message{
+    color: white;
+    font-size: 11px;
+    font-family: "Inter", sans-serif;
+    width: 200px;
+    overflow: hidden;
+    text-wrap:nowrap;
+    margin-top: -3px;
+}
+
+
+.my-contact .message-time {
+color: white;
+font-family: "Inter", sans-serif;
+width: fit-content;
+float: right;
+position: relative;
+left: 30px;
+top: -5px;
+font-size: 12px;
+}
+
+.my-contact:hover{
+    background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+}
+
+
+  .my-contact:hover .message-time,
+.my-contact:hover .simple-message,
+.my-contact:hover .full-name{
+    color: black; /* Change text color to black on hover */
+}
+
+.my-contact:hover .person-img{
+    width: 59px;
+} 
+
+
+
+
+/* display area */
+.display-area{
+    /* float: right; */
+    position: relative;
+    top: -384px;
+    left: 390px;
+    width: 65%;
+    height: 65vh;
+    background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
+    border-radius: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
 
