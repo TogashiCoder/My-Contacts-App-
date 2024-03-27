@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
 *{
     padding: 0;
     margin: 0;
@@ -86,7 +88,7 @@ form:hover .fa{
     left: 330px;
     top: 15px;
     font-size: 30px;
-    color:  #ef5cc6;
+    color:  tomato;
 
 
 
@@ -128,7 +130,7 @@ form:hover .fa{
 
 
 .text .full-name{
-    color: white;
+color: white;
 font-size: 18px;
 font-family: "Madimi One", sans-serif;
 width: 130px;
@@ -166,7 +168,7 @@ font-size: 12px;
   .my-contact:hover .message-time,
 .my-contact:hover .simple-message,
 .my-contact:hover .full-name{
-    color: black; /* Change text color to black on hover */
+    color: black;
 }
 
 .my-contact:hover .person-img{
@@ -178,12 +180,11 @@ font-size: 12px;
 
 /* display area */
 .display-area{
-    /* float: right; */
     position: relative;
-    top: -384px;
+    top: -455px; /*-384*/
     left: 390px;
     width: 65%;
-    height: 65vh;
+    height: 78vh; /*65vh*/
     background-image: linear-gradient(315deg, #2b4162 0%, #12100e 74%);
     border-radius: 20px;
     margin-right: 20px;
@@ -192,7 +193,101 @@ font-size: 12px;
 }
 
 
+.banner{
+    background-image: linear-gradient(315deg, #9e8fb2 0%, #a7acd9 74%);
+    width: 100%;
+    height: 80px;
+    border-bottom-left-radius: 60%;
+    border-bottom-right-radius: 60%;
+}
 
+
+
+
+.image-display{
+    position: relative;
+    top: 2px;
+    object-fit:cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    width: 90px;
+    height: 90px;
+    margin:0 auto;
+    outline-color:  #9e8fb2;
+    outline-style: solid;
+    outline-width: 2px;
+}
+
+.info-name-job{
+    display:flex;
+    flex-direction:column;
+    text-align: center;
+    margin-top: 15px;
+    font-family: "Mochiy Pop One", sans-serif;
+
+}
+
+.display-name{
+color: white;
+font-size: 20px;
+
+}
+.display-job{
+color: white;
+font-size: 10px;
+}
+
+
+
+
+
+.info-tele-email{
+    margin-top: 50px;
+    display: flex;
+    justify-content:space-around;
+}
+
+.tele-symbol{
+    color: lightgreen;
+}
+.email-symbol{
+    color: lightgreen;
+}
+
+.display-tele{
+color:white;
+font-size: 18px;
+letter-spacing: 2px;
+margin-left: 5px;
+}
+
+.display-email{
+    color:white;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin-left: 5px;
+}
+
+
+
+.info-map{
+    text-align: center;
+    margin-top: 80px;
+}
+
+.map-symbol{
+    color: lightgreen;
+}
+.display-map{
+    color: white;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+
+
+
+/* pop*********************************************up */
 
 
 
