@@ -18,7 +18,7 @@
 
 
 /* serach bar */
-form{
+.search-area form{
     position: relative;
     top: 50%;
     left: 10%;
@@ -33,7 +33,7 @@ form{
     padding: 5px;
 }
 
-input{
+.search-area input{
     position: absolute;
     top: 0;
     left: 0;
@@ -66,16 +66,16 @@ input{
     transition: all 1s;
 }
 
-form:hover{
+.search-area form:hover{
     width: 300px;
     cursor: pointer;
 }
 
-form:hover input{
+.search-area form:hover input{
     display: block;
 }
 
-form:hover .fa{
+.search-area form:hover .fa{
     background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
 
     color: white;
@@ -89,11 +89,12 @@ form:hover .fa{
     top: 15px;
     font-size: 30px;
     color:  tomato;
-
-
-
+    cursor: pointer;
 }
 /* whatsapp */
+
+
+
 
 
 .whatsappSpaceArea{
@@ -288,6 +289,86 @@ margin-left: 5px;
 
 
 /* pop*********************************************up */
+
+.pop-window{
+    display: none;
+    margin-top: 50px;
+    background-image: repeating-linear-gradient(45deg, rgb(27, 27, 27) 0px, rgb(27, 27, 27) 97px,rgb(24, 24, 24) 97px, rgb(24, 24, 24) 194px,rgb(20, 20, 20) 194px, rgb(20, 20, 20) 291px);
+    border-radius: 15px;
+    width: 80%;
+    height: 80vh;
+    /* background-color: tomato; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.camera-symbol{
+    font-size: 30px;
+
+}
+
+.circle{
+    background-color: #D9D9D9;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera-feild{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+#imageUpload{
+    margin-left: 10px;
+    position: relative;
+    top: 15px;
+}
+
+form{
+    text-align: center;
+}
+
+
+
+.full-name-input input,
+.tele-input input,
+.Job-input input,
+.address-input textarea
+{
+    /* background: transparent; */
+    border: #D9D9D9 solid 1px;
+  margin-top: 20px;
+  width: 280px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+.div-button input{
+    background-image: radial-gradient(circle at 48% 33%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 28% 16%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 34% 52%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 92% 52%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 77% 84%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 75% 64%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 70% 62%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 55% 100%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 12% 11%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 35% 55%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),linear-gradient(45deg, rgb(26, 21, 192),rgb(171, 83, 239));
+    color: white;
+    font-size: 15px;
+    border: none;
+    margin-top: 30px;
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    transition: all 1s;
+    font-family: monospace;
+}
+
+.div-button input:hover{
+    color: black;
+    font-size: 18px;
+    background-image: radial-gradient(circle at 23% 61%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 34% 3%, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.03) 8%,transparent 8%, transparent 92%),radial-gradient(circle at 10% 76%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 20% 80%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 48% 51%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 69% 29%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 6%,transparent 6%, transparent 94%),radial-gradient(circle at 34% 68%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 22% 7%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 15% 88%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),radial-gradient(circle at 14% 20%, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.04) 4%,transparent 4%, transparent 96%),linear-gradient(135deg, rgb(212, 14, 0),rgb(235, 212, 64));
+}
 
 
 

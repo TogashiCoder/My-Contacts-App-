@@ -14,11 +14,12 @@
 
 
     <div class="big-pa">
-
-        <form action="">
+        <div class="search-area">
+        <form action="" >
             <input type="search" placeholder="Search...">
             <i class="fa fa-search"></i>
         </form>
+     </div>
         <div class="add-symbol">
             <i class="fa-regular fa-square-plus"></i>
         </div>
@@ -137,6 +138,39 @@
             </div>
 
 
+
+<!-- ******************************************************** -->
+            <div class="pop-window">
+                <form action="">
+                    <div class="camera-feild">
+                        <div class="circle">
+                            <i class="camera-symbol fa-solid fa-camera"></i>
+                        </div>
+                            <input type="file" id="imageUpload" name="imageUpload">
+                    </div>
+        
+                    <div class="full-name-input">
+                        <input type="text" id="full_name" name="full_name" required placeholder="Full Name">
+                    </div>
+                    <div class="tele-input">
+                        <input type="tel" id="telephone" name="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
+                    </div>
+                    <div class="Job-input">
+                         <input type="text" id="job_position" name="job_position" required placeholder="Phone Number">
+                    </div>
+                    <div class="address-input">
+                        <textarea id="address" name="address" rows="10" cols="19" required placeholder="address"></textarea>
+                    </div>
+        
+                    <div class="div-button">
+                        <input type="submit" value="Add" class="add-button">
+                    </div>
+        
+                </form>
+                </div>
+
+<!-- ******************************************************** -->
+
         
 
 
@@ -144,5 +178,7 @@
 
 
     </div>
+
+   <script src="App.js"></script> 
 </body>
 </html>
