@@ -15,8 +15,8 @@
 
     <div class="big-pa">
         <div class="search-area">
-        <form action="" >
-            <input type="search" placeholder="Search...">
+        <form action="" class="search-form">
+            <input type="search" name="search" placeholder="Search...">
             <i class="fa fa-search"></i>
         </form>
      </div>
@@ -141,7 +141,7 @@
 
 <!-- ******************************************************** -->
             <div class="pop-window">
-                <form action="">
+                <form action="" class="popUp-form">
                     <div class="camera-feild">
                         <div class="circle">
                             <i class="camera-symbol fa-solid fa-camera"></i>
@@ -153,10 +153,13 @@
                         <input type="text" id="full_name" name="full_name" required placeholder="Full Name">
                     </div>
                     <div class="tele-input">
-                        <input type="tel" id="telephone" name="telephone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Format: 123-456-7890" required>
+                        <input type="tel" id="telephone" name="telephone"  placeholder="Format: 123-456-7890" required>
+                    </div>
+                    <div class="email-input">
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
                     </div>
                     <div class="Job-input">
-                         <input type="text" id="job_position" name="job_position" required placeholder="Phone Number">
+                         <input type="text" id="job_position" name="job_position" required placeholder="Job">
                     </div>
                     <div class="address-input">
                         <textarea id="address" name="address" rows="10" cols="19" required placeholder="address"></textarea>
