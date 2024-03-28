@@ -14,11 +14,53 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   addButton.addEventListener('click', showPopup);
-
+  addButton.addEventListener('click', addContactFromURL);
   closeButton.addEventListener('click', function(event) {
     hidePopup();
     PopUp_validation(event);
+    addContactFromURL();
   });
+
+
+  fillFormFieldsFromURLParams();
+
+  // add contact addContact
+  // Function to add contact using URL parameters
+function addContactFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const fullName = urlParams.get('full_name');
+  const tele = urlParams.get('telephone');
+  const email = urlParams.get('email');
+  const job = urlParams.get('job_position');
+  const address = urlParams.get('address');
+
+  if (fullName && tele && email && job && address) {
+    const newDivElement = document.createElement("div");
+    newDivElement.classList.add("my-contact");
+    newDivElement.innerHTML = `
+      <div class="my-contact">
+          <img class="person-img" src='Images/contact-1.png' alt="myContact-image" style="width: 55px;">
+          <div class="text">
+              <p class="full-name">${fullName}</p>
+              <p class="simple-message">Great! Keep up the good work</p>
+              <p class="emailHidden" style="display: none;">${email}</p>
+              <p class="teleHidden" style="display: none;">${tele}</p>
+              <p class="addressHidden" style="display: none;">${address}</p>
+              <p class="JobHidden" style="display: none;">${job}</p>
+          </div>
+          <p class="message-time">10:35 pm</p>
+      </div>
+      `;
+    whatsappSpaceAreaDom.appendChild(newDivElement);
+    hidePopup();
+  } else {
+    console.log('Form validation failed.');
+  }
+}
+
+  
+
+
 
   // Function to create a new .my-contact div
   function createContactDiv(user) {
@@ -33,6 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="emailHidden" style="display: none;">${user.email}</p>
               <p class="teleHidden" style="display: none;">${user.phone}</p>
               <p class="addressHidden" style="display: none;">${user.location.country} ${user.location.city}</p>
+              <p class="JobHidden" style="display: none;">${user.job}</p>
           </div>
           <p class="message-time">10:35 pm</p>
       </div>
@@ -40,7 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     whatsappSpaceAreaDom.appendChild(newDivElement);
   }
 
-  // Function to fetch data and create .my-contact divs
   async function getAndCreateContacts() {
     const response = await fetch("user.json");
     const data = await response.json();
@@ -110,11 +152,71 @@ document.addEventListener("DOMContentLoaded", () => {
     const address = div.querySelector('.addressHidden').textContent;
     const tele = div.querySelector('.teleHidden').textContent;
     const email = div.querySelector('.emailHidden').textContent;
+    const imageUrl = div.querySelector('.person-img').src;
+    const job = div.querySelector('.JobHidden').textContent;
+
+    
     console.log('Full Name:', fullName);
     console.log('Simple Message:', simpleMessage);
     console.log('Message Time:', messageTime);
     console.log('Address:', address);
     console.log('Telephone:', tele);
     console.log('Email:', email);
+  
+    // Update display elements with the fetched data
+  document.querySelector('.display-name').textContent = fullName;
+  document.querySelector('.display-tele').textContent = tele;
+  document.querySelector('.display-job').textContent = '';
+  document.querySelector('.display-map').textContent = address; 
+  document.querySelector('.display-email').textContent = address; 
+  document.querySelector('.image-display').src = imageUrl;
+  document.querySelector('.display-job').textContent = job;
+
+}
+
+
+
+
+function fillFormFieldsFromURLParams() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const fullName = urlParams.get('full_name');
+  const telephone = urlParams.get('telephone');
+  const email = urlParams.get('email');
+  const jobPosition = urlParams.get('job_position');
+  const address = urlParams.get('address');
+
+  if (fullName && telephone && email && jobPosition && address) {
+    const imageUploadParam = urlParams.get('imageUpload');
+    if (imageUploadParam) {
+      const imageUploadValue = decodeURIComponent(imageUploadParam);
+      const newContactDiv = document.createElement('div');
+      newContactDiv.classList.add('my-contact');
+      newContactDiv.innerHTML = `
+        <div class="my-contact">
+          <img class="person-img" src="${imageUploadValue}" alt="myContact-image" style="width: 55px; height: 55px; border-radius: 50%;">
+          <div class="text">
+            <p class="full-name">${fullName}</p>
+            <p class="simple-message">Great! Keep up the good work</p>
+            <p class="emailHidden" style="display: none;">${email}</p>
+            <p class="teleHidden" style="display: none;">${telephone}</p>
+            <p class="addressHidden" style="display: none;">${address}</p>
+            <p class="JobHidden" style="display: none;">${jobPosition}</p>
+          </div>
+          <p class="message-time">10:35 pm</p>
+        </div>
+      `;
+      const whatsappSpaceArea = document.querySelector('.whatsappSpaceArea');
+      whatsappSpaceArea.appendChild(newContactDiv);
+    } else {
+      console.log('Image upload parameter missing.');
+    }
+  } else {
+    console.log('URL parameters missing or incomplete.');
   }
+}
+
+
+  
+  
+  
 });
