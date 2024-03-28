@@ -115,6 +115,9 @@
 
 
 
+
+
+
 .my-contact{
     display: flex;
     background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
@@ -130,11 +133,15 @@
 }
 
 
+/* .emailHidden, .teleHidden, .addressHidden{
+    visibility: hidden;
+} */
+
 .text .full-name{
 color: white;
 font-size: 18px;
 font-family: "Madimi One", sans-serif;
-width: 130px;
+width: 155px;
 overflow: hidden;
 text-wrap:nowrap;
 }
