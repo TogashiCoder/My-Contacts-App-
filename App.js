@@ -71,3 +71,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+
+
+
+// Api connection
+async function get() {
+    const response = await fetch("user.json");
+    const data = await response.json();
+    console.log(data);
+
+    const whatsappSpaceAreaDom = document.querySelector('.whatsappSpaceArea');
+
+    data.results.forEach(user => {
+      const newDivElement = document.createElement("div");
+      newDivElement.classList.add("my-contact");
+      newDivElement.innerHTML = `
+        <div class="my-contact" id="list-1">
+            <img class="person-img" src='${user.picture.large}' alt="myContact-image" style="width: 55px;">
+            <div class="text">
+                <p class="full-name">${user.name.first} ${user.name.last}</p>
+                <p class="simple-message">Great ! keep up the good work</p>
+            </div>
+            <p class="message-time">10:35 pm</p>
+        </div>
+        `;
+      whatsappSpaceAreaDom.appendChild(newDivElement);
+    });
+}
+
+get();
+
+
+
+
+

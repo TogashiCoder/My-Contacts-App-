@@ -1,0 +1,295 @@
+{
+    "results": [
+      {
+        "gender": "male",
+        "name": {
+          "title": "Mr",
+          "first": "Youssef",
+          "last": "El Amrani"
+        },
+        "location": {
+          "street": {
+            "number": 123,
+            "name": "Rue Ibn Khaldoun"
+          },
+          "city": "Rabat",
+          "state": "Rabat-Salé-Kénitra",
+          "country": "Morocco",
+          "postcode": "10000",
+          "coordinates": {
+            "latitude": "34.0150",
+            "longitude": "-6.8324"
+          }
+        },
+        "email": "youssef.elamrani@example.com",
+        "phone": "(212) 678-9012",
+        "cell": "(212) 555-6789",
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/1.jpg"
+        },
+        "nat": "MA"
+      },
+      {
+        "gender": "female",
+        "name": {
+          "title": "Miss",
+          "first": "Fatima",
+          "last": "Benbrahim"
+        },
+        "location": {
+          "street": {
+            "number": 456,
+            "name": "Avenue Mohammed V"
+          },
+          "city": "Casablanca",
+          "state": "Casablanca-Settat",
+          "country": "Morocco",
+          "postcode": "20000",
+          "coordinates": {
+            "latitude": "33.5951",
+            "longitude": "-7.6183"
+          }
+        },
+        "email": "fatima.benbrahim@example.com",
+        "phone": "(212) 987-6543",
+        "cell": "(212) 555-4321",
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/women/2.jpg"
+        },
+        "nat": "MA"
+      },
+      {
+        "gender": "male",
+        "name": {
+          "title": "Mr",
+          "first": "Mohammed",
+          "last": "Bouhali"
+        },
+        "location": {
+          "street": {
+            "number": 789,
+            "name": "Rue Abdelkrim El Khattabi"
+          },
+          "city": "Marrakesh",
+          "state": "Marrakesh-Safi",
+          "country": "Morocco",
+          "postcode": "40000",
+          "coordinates": {
+            "latitude": "31.6295",
+            "longitude": "-7.9811"
+          }
+        },
+        "email": "mohammed.bouhali@example.com",
+        "phone": "(212) 123-4567",
+        "cell": "(212) 555-9876",
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/3.jpg"
+        },
+        "nat": "MA"
+      },
+      {
+        "gender": "female",
+        "name": {
+          "title": "Mrs",
+          "first": "Amina",
+          "last": "El Mansouri"
+        },
+        "location": {
+          "street": {
+            "number": 1011,
+            "name": "Avenue Hassan II"
+          },
+          "city": "Fes",
+          "state": "Fès-Meknès",
+          "country": "Morocco",
+          "postcode": "30000",
+          "coordinates": {
+            "latitude": "34.0372",
+            "longitude": "-5.0028"
+          }
+        },
+        "email": "amina.elmansouri@example.com",
+        "phone": "(212) 876-5432",
+        "cell": "(212) 555-8765",
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/women/4.jpg"
+        },
+        "nat": "MA"
+      },
+      {
+        "gender": "male",
+        "name": {
+          "title": "Mr",
+          "first": "Ahmed",
+          "last": "Ait Salah"
+        },
+        "location": {
+          "street": {
+            "number": 1314,
+            "name": "Avenue Mohammed VI"
+          },
+          "city": "Tangier",
+          "state": "Tanger-Tetouan-Al Hoceima",
+          "country": "Morocco",
+          "postcode": "90000",
+          "coordinates": {
+            "latitude": "35.7595",
+            "longitude": "-5.8330"
+          }
+        },
+        "email": "ahmed.aitsalah@example.com",
+        "phone": "(212) 345-6789",
+        "cell": "(212) 555-3456",
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/5.jpg"
+        },
+        "nat": "MA"
+      },
+      {
+        "gender": "female",
+        "name": {
+          "title": "Miss",
+          "first": "Nadia",
+          "last": "Cherkaoui"
+        },
+        "location": {
+          "street": {
+            "number": 1516,
+            "name": "Rue Ahmed Rami"
+          },
+          "city": "Agadir",
+          "state": "Souss-Massa",
+          "country": "Morocco",
+          "postcode": "80000",
+          "coordinates": {
+            "latitude": "30.4202",
+            "longitude": "-9.5981"
+          }
+        },
+        "email": "nadia.cherkaoui@example.com",
+        "phone": "(212) 654-3210",
+        "cell": "(212) 555-2345",
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/women/6.jpg"
+        },
+        "nat": "MA"
+      },
+      {
+        "gender": "male",
+        "name": {
+          "title": "Mr",
+          "first": "Omar",
+          "last": "Bouziane"
+        },
+        "location": {
+          "street": {
+            "number": 1718,
+            "name": "Avenue Hassan II"
+          },
+          "city": "Meknes",
+          "state": "Fès-Meknès",
+          "country": "Morocco",
+          "postcode": "50000",
+          "coordinates": {
+            "latitude": "33.8854",
+            "longitude": "-5.5366"
+          }
+        },
+        "email": "omar.bouziane@example.com",
+        "phone": "(212) 567-8901",
+        "cell": "(212) 555-5678",
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/7.jpg"
+        },
+        "nat": "MA"
+      },
+      {
+        "gender": "female",
+        "name": {
+          "title": "Mrs",
+          "first": "Zahra",
+          "last": "El Fassi"
+        },
+        "location": {
+          "street": {
+            "number": 1920,
+            "name": "Rue Ibn Battuta"
+          },
+          "city": "Tetouan",
+          "state": "Tanger-Tetouan-Al Hoceima",
+          "country": "Morocco",
+          "postcode": "93000",
+          "coordinates": {
+            "latitude": "35.5731",
+            "longitude": "-5.3662"
+          }
+        },
+        "email": "zahra.elfassi@example.com",
+        "phone": "(212) 789-0123",
+        "cell": "(212) 555-7890",
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/women/8.jpg"
+        },
+        "nat": "MA"
+      },
+      {
+        "gender": "male",
+        "name": {
+          "title": "Mr",
+          "first": "Karim",
+          "last": "El Majdoubi"
+        },
+        "location": {
+          "street": {
+            "number": 2122,
+            "name": "Avenue Mohammed V"
+          },
+          "city": "Fez",
+          "state": "Fès-Meknès",
+          "country": "Morocco",
+          "postcode": "60000",
+          "coordinates": {
+            "latitude": "34.0369",
+            "longitude": "-5.0086"
+          }
+        },
+        "email": "karim.elmajdoubi@example.com",
+        "phone": "(212) 901-2345",
+        "cell": "(212) 555-9012",
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/men/9.jpg"
+        },
+        "nat": "MA"
+      },
+      {
+        "gender": "female",
+        "name": {
+          "title": "Miss",
+          "first": "Loubna",
+          "last": "Benjelloun"
+        },
+        "location": {
+          "street": {
+            "number": 2324,
+            "name": "Rue Ibn Sina"
+          },
+          "city": "Tanger",
+          "state": "Tanger-Tetouan-Al Hoceima",
+          "country": "Morocco",
+          "postcode": "91000",
+          "coordinates": {
+            "latitude": "35.7771",
+            "longitude": "-5.8038"
+          }
+        },
+        "email": "loubna.benjelloun@example.com",
+        "phone": "(212) 345-6789",
+        "cell": "(212) 555-2345",
+        "picture": {
+          "large": "https://randomuser.me/api/portraits/women/10.jpg"
+        },
+        "nat": "MA"
+      }
+    ]
+  }
+  
