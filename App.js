@@ -33,6 +33,8 @@ function addContactFromURL() {
   const email = urlParams.get('email');
   const job = urlParams.get('job_position');
   const address = urlParams.get('address');
+  const imageUploadParam = urlParams.get('imageUpload');
+
 
   if (fullName && tele && email && job && address) {
     const newDivElement = document.createElement("div");
@@ -61,14 +63,13 @@ function addContactFromURL() {
   
 
 
-
   // Function to create a new .my-contact div
   function createContactDiv(user) {
     const newDivElement = document.createElement("div");
     newDivElement.classList.add("my-contact");
     newDivElement.innerHTML = `
       <div class="my-contact">
-          <img class="person-img" src='${user.picture.large}' alt="myContact-image" style="width: 55px;">
+          <img class="person-img" src='${user.picture.large}' alt="myContact-image" style="width: 55px; height: 55px; border-radius: 50%;margin-left: -10px;">
           <div class="text">
               <p class="full-name">${user.name.first} ${user.name.last}</p>
               <p class="simple-message">Great! Keep up the good work</p>
@@ -77,7 +78,7 @@ function addContactFromURL() {
               <p class="addressHidden" style="display: none;">${user.location.country} ${user.location.city}</p>
               <p class="JobHidden" style="display: none;">${user.job}</p>
           </div>
-          <p class="message-time">10:35 pm</p>
+          <p class="message-time" style=" float : left;">10:35 pm</p>
       </div>
       `;
     whatsappSpaceAreaDom.appendChild(newDivElement);
@@ -166,13 +167,14 @@ function addContactFromURL() {
     // Update display elements with the fetched data
   document.querySelector('.display-name').textContent = fullName;
   document.querySelector('.display-tele').textContent = tele;
-  document.querySelector('.display-job').textContent = '';
-  document.querySelector('.display-map').textContent = address; 
-  document.querySelector('.display-email').textContent = address; 
-  document.querySelector('.image-display').src = imageUrl;
   document.querySelector('.display-job').textContent = job;
+  document.querySelector('.display-map').textContent = address; 
+  document.querySelector('.display-email').textContent = email; 
+  document.querySelector('.image-display').src = imageUrl;
 
 }
+
+
 
 
 
@@ -184,16 +186,16 @@ function fillFormFieldsFromURLParams() {
   const email = urlParams.get('email');
   const jobPosition = urlParams.get('job_position');
   const address = urlParams.get('address');
+  const imageUploadParam = urlParams.get('imageUpload');
 
   if (fullName && telephone && email && jobPosition && address) {
-    const imageUploadParam = urlParams.get('imageUpload');
     if (imageUploadParam) {
       const imageUploadValue = decodeURIComponent(imageUploadParam);
       const newContactDiv = document.createElement('div');
       newContactDiv.classList.add('my-contact');
       newContactDiv.innerHTML = `
         <div class="my-contact">
-          <img class="person-img" src="${imageUploadValue}" alt="myContact-image" style="width: 55px; height: 55px; border-radius: 50%;">
+          <img class="person-img" src="${imageUploadValue}" alt="myContact-image">
           <div class="text">
             <p class="full-name">${fullName}</p>
             <p class="simple-message">Great! Keep up the good work</p>
@@ -206,7 +208,11 @@ function fillFormFieldsFromURLParams() {
         </div>
       `;
       const whatsappSpaceArea = document.querySelector('.whatsappSpaceArea');
-      whatsappSpaceArea.appendChild(newContactDiv);
+      if (whatsappSpaceArea) {
+        whatsappSpaceArea.appendChild(newContactDiv);
+      } else {
+        console.error('.whatsappSpaceArea not found.');
+      }
     } else {
       console.log('Image upload parameter missing.');
     }
@@ -215,6 +221,8 @@ function fillFormFieldsFromURLParams() {
   }
 }
 
+// Call the function when the page loads
+fillFormFieldsFromURLParams();
 
   
   
