@@ -1,69 +1,16 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const addButton = document.querySelector('.add-symbol');
-  const popupWindow = document.querySelector('.pop-window');
-  const closeButton = popupWindow.querySelector('.add-button');
-  const popUp_form = popupWindow.querySelector('.popUp-form');
-  const whatsappSpaceAreaDom = document.querySelector('.whatsappSpaceArea');
-
-  // Attach click event listener to the parent container
-  whatsappSpaceAreaDom.addEventListener('click', function(event) {
-    const targetDiv = event.target.closest('.my-contact');
-    if (targetDiv) {
-      Display(targetDiv);
-    }
-  });
-
-  addButton.addEventListener('click', showPopup);
-  addButton.addEventListener('click', addContactFromURL);
-  closeButton.addEventListener('click', function(event) {
-    hidePopup();
-    PopUp_validation(event);
-    addContactFromURL();
-  });
-
-
-  fillFormFieldsFromURLParams();
-
-  // add contact addContact
-  // Function to add contact using URL parameters
-function addContactFromURL() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const fullName = urlParams.get('full_name');
-  const tele = urlParams.get('telephone');
-  const email = urlParams.get('email');
-  const job = urlParams.get('job_position');
-  const address = urlParams.get('address');
-  const imageUploadParam = urlParams.get('imageUpload');
-
-
-  if (fullName && tele && email && job && address) {
-    const newDivElement = document.createElement("div");
-    newDivElement.classList.add("my-contact");
-    newDivElement.innerHTML = `
-      <div class="my-contact">
-          <img class="person-img" src='Images/contact-1.png' alt="myContact-image" style="width: 55px;">
-          <div class="text">
-              <p class="full-name">${fullName}</p>
-              <p class="simple-message">Great! Keep up the good work</p>
-              <p class="emailHidden" style="display: none;">${email}</p>
-              <p class="teleHidden" style="display: none;">${tele}</p>
-              <p class="addressHidden" style="display: none;">${address}</p>
-              <p class="JobHidden" style="display: none;">${job}</p>
-          </div>
-          <p class="message-time">10:35 pm</p>
-      </div>
-      `;
-    whatsappSpaceAreaDom.appendChild(newDivElement);
-    hidePopup();
-  } else {
-    console.log('Form validation failed.');
-  }
-}
-
+document.addEventListener("DOMContentLoaded", () => 
+{
+  async function ApiConnection() {
+    const response = await fetch("user.json");
+    const data = await response.json();
   
+    data.results.forEach(user => {
+      createContactDiv(user);
+    });
+  }
+  
+  ApiConnection();
 
-
-  // Function to create a new .my-contact div
   function createContactDiv(user) {
     const newDivElement = document.createElement("div");
     newDivElement.classList.add("my-contact");
@@ -84,16 +31,46 @@ function addContactFromURL() {
     whatsappSpaceAreaDom.appendChild(newDivElement);
   }
 
-  async function getAndCreateContacts() {
-    const response = await fetch("user.json");
-    const data = await response.json();
 
-    data.results.forEach(user => {
-      createContactDiv(user);
-    });
-  }
+  const addButton = document.querySelector('.add-symbol');
+  const popupWindow = document.querySelector('.pop-window');
+  const closeButton = document.querySelector('.add-button');
+  const popUp_form = document.querySelector('.popUp-form');
+  const whatsappSpaceAreaDom = document.querySelector('.whatsappSpaceArea');
 
-  getAndCreateContacts();
+
+  /*-------------------events--------------------------*/
+  // Attach click event listener to the parent container
+  whatsappSpaceAreaDom.addEventListener('click', function(event) {
+    const targetDiv = event.target.closest('.my-contact');
+    if (targetDiv) {
+      Display(targetDiv);
+    }
+  });
+
+  addButton.addEventListener('click', showPopup);
+
+  closeButton.addEventListener('click', function(event) {
+    hidePopup();
+    PopUp_validation(event);
+  });
+
+  popUp_form.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+  
+    storeFormData();
+  
+    hidePopup();
+  });
+
+  searchInput.addEventListener('input', search);
+
+
+
+
+  
+
+  /*-------------------functions--------------------------*/
 
   function showPopup() {
     popupWindow.style.display = 'block';
@@ -156,13 +133,6 @@ function addContactFromURL() {
     const imageUrl = div.querySelector('.person-img').src;
     const job = div.querySelector('.JobHidden').textContent;
 
-    
-    console.log('Full Name:', fullName);
-    console.log('Simple Message:', simpleMessage);
-    console.log('Message Time:', messageTime);
-    console.log('Address:', address);
-    console.log('Telephone:', tele);
-    console.log('Email:', email);
   
     // Update display elements with the fetched data
   document.querySelector('.display-name').textContent = fullName;
@@ -176,55 +146,127 @@ function addContactFromURL() {
 
 
 
+function storeFormData() {
+  const form = document.querySelector('.popUp-form');
+  const fullName = form.querySelector("[name='full_name']").value;
+  const telephone = form.querySelector("[name='telephone']").value;
+  const email = form.querySelector("[name='email']").value;
+  const jobPosition = form.querySelector("[name='job_position']").value;
+  const address = form.querySelector("[name='address']").value;
+
+// Get the uploaded image file
+const imageUploadInput = form.querySelector('#imageUpload');
+const uploadedImageFile = imageUploadInput.files[0];
+const url =  URL.createObjectURL(uploadedImageFile);
+const img = new Image();
+const imagePath = img.src;
 
 
 
-function fillFormFieldsFromURLParams() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const fullName = urlParams.get('full_name');
-  const telephone = urlParams.get('telephone');
-  const email = urlParams.get('email');
-  const jobPosition = urlParams.get('job_position');
-  const address = urlParams.get('address');
-  const imageUploadParam = urlParams.get('imageUpload');
 
-  if (fullName && telephone && email && jobPosition && address) {
-    if (imageUploadParam) {
-      const imageUploadValue = decodeURIComponent(imageUploadParam);
-      const newContactDiv = document.createElement('div');
-      newContactDiv.classList.add('my-contact');
-      newContactDiv.innerHTML = `
-        <div class="my-contact">
-          <img class="person-img" src="${imageUploadValue}" alt="myContact-image">
-          <div class="text">
-            <p class="full-name">${fullName}</p>
-            <p class="simple-message">Great! Keep up the good work</p>
-            <p class="emailHidden" style="display: none;">${email}</p>
-            <p class="teleHidden" style="display: none;">${telephone}</p>
-            <p class="addressHidden" style="display: none;">${address}</p>
-            <p class="JobHidden" style="display: none;">${jobPosition}</p>
-          </div>
-          <p class="message-time">10:35 pm</p>
-        </div>
-      `;
-      const whatsappSpaceArea = document.querySelector('.whatsappSpaceArea');
-      if (whatsappSpaceArea) {
-        whatsappSpaceArea.appendChild(newContactDiv);
-      } else {
-        console.error('.whatsappSpaceArea not found.');
-      }
-    } else {
-      console.log('Image upload parameter missing.');
-    }
-  } else {
-    console.log('URL parameters missing or incomplete.');
-  }
+  // Create an object to hold the form data including the image path
+  const formData = {
+    fullName,
+    telephone,
+    email,
+    jobPosition,
+    address,
+    imagePath // Add the image path to the form data object
+  };
+
+  // Retrieve existing data from local storage or initialize an empty array
+  const existingData = JSON.parse(localStorage.getItem('formDataArray')) || [];
+
+  // Add the new form data to the existing array
+  existingData.push(formData);
+
+  // Convert the array back to JSON format
+  const jsonData = JSON.stringify(existingData);
+
+  // Store the updated JSON data in local storage under the key 'formDataArray'
+  localStorage.setItem('formDataArray', jsonData);
+
+  // Optionally, you can display a message or perform other actions after storing the data
+  alert('Form data stored in local storage!');
 }
 
-// Call the function when the page loads
-fillFormFieldsFromURLParams();
 
+function addFromLocalStorge()
+{
+  // Retrieve the JSON data from local storage
+const storedData = localStorage.getItem('formDataArray');
+
+// Convert the JSON data back to a JavaScript array or initialize an empty array if null
+const formDataArray = storedData ? JSON.parse(storedData) : [];
+// Check if formDataArray is not null before attempting to iterate
+if (formDataArray) 
+{
   
+  formDataArray.forEach(formData => {
+  const newContactDiv = document.createElement('div');
+  newContactDiv.classList.add('my-contact');
+  newContactDiv.innerHTML = `
+    <div class="my-contact">
+      <img class="person-img" src="${formData.imagePath}" alt="myContact-image">
+      <div class="text">
+        <p class="full-name">${formData.fullName}</p>
+        <p class="simple-message">Great! Keep up the good work</p>
+        <p class="emailHidden" style="display: none;">${formData.email}</p>
+        <p class="teleHidden" style="display: none;">${formData.telephone}</p>
+        <p class="addressHidden" style="display: none;">${formData.address}</p>
+        <p class="JobHidden" style="display: none;">${formData.jobPosition}</p>
+      </div>
+      <p class="message-time">10:35 pm</p>
+    </div>
+  `;
+  const whatsappSpaceArea = document.querySelector('.whatsappSpaceArea');
+    whatsappSpaceArea.appendChild(newContactDiv);
+
+  });
+}
+
+}
+
+addFromLocalStorge();
+
+
+
+function clearLocalStorage() {
+  localStorage.clear();
+  console.log('Local storage data cleared.');
+}
+
+// clearLocalStorage();
   
+
+
+
+
+
+
+
+function search() {
+  const user_search_input = searchInput.value.trim().toLowerCase();
+
+  const allContactDivs = document.querySelectorAll('.my-contact');
+
+  allContactDivs.forEach(contactDiv => {
+    const fullName = contactDiv.querySelector('.full-name').textContent.toLowerCase();
+    const tele = contactDiv.querySelector('.teleHidden').textContent.toLowerCase();
+
+    if (fullName.includes(user_search_input) || tele.includes(user_search_input)) {
+      contactDiv.style.display = 'block'; 
+    } else {
+      contactDiv.style.display = 'none'; 
+    }
+  });
+}
+
+
+
+
+
+
+
   
 });
